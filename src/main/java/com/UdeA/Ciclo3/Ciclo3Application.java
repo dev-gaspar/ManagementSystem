@@ -1,6 +1,6 @@
 package com.UdeA.Ciclo3;
 
-import com.UdeA.Ciclo3.Entidades.Empresa;
+import com.UdeA.Ciclo3.entidades.Empresa;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
