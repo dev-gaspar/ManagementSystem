@@ -35,6 +35,14 @@ public class ServiciosEmpresa {
         return false;
     }
 
-    //Metodo para eliminar pendiente
+    //Metodo para eliminar por id
+    public boolean deleteEmpresa(Integer id){
+        respositorioEmpresa.deleteById(id);
+        if (getEmpresaById(id) != null){
+            return false;
+        }
+        return true;
+    }
+
 
 }
