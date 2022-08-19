@@ -1,5 +1,5 @@
 package com.UdeA.Ciclo3;
-
+//Probando vsc y git
 import com.UdeA.Ciclo3.entidades.Empresa;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
