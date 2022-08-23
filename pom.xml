@@ -12,9 +12,9 @@
 	<artifactId>Ciclo3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Ciclo3</name>
-	<description>Proyecto para el ciclo 3 de Mision Tic 2022</description>
+	<description>Proyecto para el ciclo 3 Mision TIC 2022</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -23,7 +23,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-oauth2-client</artifactId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
