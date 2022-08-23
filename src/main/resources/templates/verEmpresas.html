@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Lista de Empresas - Ciclo3</title>
+    <title>Lista de Empresas</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -32,8 +32,8 @@
             <td th:text="${empresa.direccion}"></td>
             <td th:text="${empresa.telefono}"></td>
             <td th:text="${empresa.NIT}"></td>
-            <td><button type="button" class="btn btn-warning"><a th:href="@{/editarEmpresa}">Editar</a></button></td>
-            <td><button type="button" class="btn btn-danger"><a th:href="@{/eliminarEmpresa}">Eliminar</a></button></td>
+            <td><button type="button" class="btn btn-warning"><a th:href="@{/editarEmpresa}"></a>Editar</button></td>
+            <td><button type="button" class="btn btn-danger"><a th:href="@{/eliminarEmpresa}"></a>Eliminar</button></td>
         </tr>
     </table>
 
