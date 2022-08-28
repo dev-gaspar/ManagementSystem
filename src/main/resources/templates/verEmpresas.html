@@ -89,6 +89,12 @@ body {
 #sidebar .nav a i{
   margin-right: 16px;
 }
+
+a{
+color:white;
+text-decoration-none;
+}
+
   </style>
 
 </head>
@@ -97,11 +103,11 @@ body {
     <!-- Sidebar -->
     <div id="sidebar">
         <header>
-            <a href="#">System</a>
+            <a th:href="@{/}">System</a>
         </header>
         <ul class="nav">
             <li>
-                <a href="#">
+                <a th:href="@{/}">
                     <i class="zmdi zmdi-view-dashboard"></i> Home
                 </a>
             </li>
@@ -111,7 +117,7 @@ body {
                 </a>
             </li>
             <li>
-                <a href="@/verEmpresas">
+                <a th:href="@{/empresas}">
                     <i class="zmdi zmdi-widgets"></i> Empresas
                 </a>
             </li>
@@ -138,10 +144,12 @@ body {
         </nav>
 
 
+
         <div class="container">
-            <h1> Lista de Empresas</h1>
+            <h1>Empresas</h1>
+
             <!--Dibujamos la tabla-->
-            <table class="table">
+            <table class="table table-bordered">
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
@@ -160,10 +168,15 @@ body {
                     <td th:text="${empresa.direccion}"></td>
                     <td th:text="${empresa.telefono}"></td>
                     <td th:text="${empresa.NIT}"></td>
-                    <td><button type="button" class="btn btn-warning"><a th:href="@{/editarEmpresa}"></a>Editar</button></td>
-                    <td><button type="button" class="btn btn-danger"><a th:href="@{/eliminarEmpresa}"></a>Eliminar</button></td>
+                    <td><button type="button" class="btn btn-warning"><a th:href="@{/editarEmpresa}">Editar</a></button></td>
+                    <td><button type="button" class="btn btn-danger"><a th:href="@{/eliminarEmpresa}">Eliminar</a></button></td>
                 </tr>
             </table>
+
+
+            <button type="button" class="btn btn-info"><a th:href="@{/agregarEmpresa}">Nueva</a></button>
+
+
         </div>
     </div>
     </div>

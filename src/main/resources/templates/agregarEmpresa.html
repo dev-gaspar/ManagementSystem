@@ -2,9 +2,9 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>System - Home</title>
+  <title>System - Agregar Empresa</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
 
   <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
@@ -134,39 +134,64 @@ body {
       </div>
     </nav>
 
-    <div class="container-fluid">
-      <div class="text-center">
-        <h1>Sistema de gestion</h1>
-        <br>
-      </div>
-      <div class="row slideanim">
-        <div class="col-sm-4 col-xs-12">
-          <div class="panel panel-default text-center">
-            <div class="panel">
-              <h1>Sistema de gestion de contabilidad</h1>
-            </div>
 
-          </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-          <div class="panel panel-default text-center">
-            <div class="panel">
-              <h1>Sistema de gestion de usuarios</h1>
+    <div class="container">
+
+      <h1>Nueva Empresa</h1>
+      <br>
+      <form th:action="@{/GuardarEmpresa}" th:object="${empresa}" method="post">
+        <!--Campo para nombre-->
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="nombre">Nombre de la Empresa:</label>
+            <div class="col-md-6">
+              <input type="text" th:field="*{nombre}" class="form-control" id="nombre" required="required">
             </div>
           </div>
         </div>
-        <div class="col-sm-4 col-xs-12">
-          <div class="panel panel-default text-center">
-            <div class="panel">
-              <h1><a th:href="@{/empresas}" class="text-decoration-none">Sistema de gestion de empresas</a></h1>
+
+        <!--Campo para direccion-->
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="direccion">Direccion de la Empresa:</label>
+            <div class="col-md-6">
+              <input type="text" th:field="*{direccion}" class="form-control" id="direccion" required="required">
             </div>
           </div>
         </div>
-      </div>
+
+        <!--Campo para telefono-->
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="telefono">Telefono de la Empresa:</label>
+            <div class="col-md-6">
+              <input type="text" th:field="*{telefono}" class="form-control" id="telefono" required="required">
+            </div>
+          </div>
+        </div>
+
+        <!--Campo para NIT-->
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="NIT">NIT de la Empresa:</label>
+            <div class="col-md-6">
+              <input type="text" th:field="*{NIT}" class="form-control" id="NIT" required="required">
+            </div>
+          </div>
+        </div>
+
+        <!--Boton para enviar todo y ejecutar accion -->
+        <div class="row">
+          <div class="col-md-2">
+            <button class="btn btn-success">Crear Empresa</button>
+          </div>
+        </div>
+
+      </form>
     </div>
   </div>
 </div>
 <!-- partial -->
-  
+
 </body>
 </html>
