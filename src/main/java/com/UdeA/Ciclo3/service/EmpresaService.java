@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+
 //Le decimos a Spring que esta clase es de servicios
 @Service
 public class EmpresaService {
@@ -22,7 +24,13 @@ public class EmpresaService {
 
     //Metodo que me trae un objeto de tipo Empresa cuando cuento con el id de la misma
     public Empresa getEmpresaById(Integer id){
-        return empresaRepository.findById(id).get();
+        Empresa empresa = null;
+        try{
+            empresa = empresaRepository.findById(id).get();
+        }catch  (NoSuchElementException exception){
+            //Entra al catch si no encontro la empresa y retorna null por que el try fallo
+        }
+        return empresa;
     }
 
     //Metodo para guardar o actualizar objetos de tipo Empresa
