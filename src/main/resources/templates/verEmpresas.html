@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
 
@@ -182,6 +183,31 @@ text-decoration-none;
     </div>
 </div>
 <!-- partial -->
+
+<script th:inline="javascript">
+    window.onload=function(){
+
+        var msg= [[${mensaje}]];
+        if (msg == "Save OK!"){
+            Command : toastr["success"]("Save OK!")
+            }
+        else if (msg == "Update OK!"){
+            Command : toastr["success"]("Update OK!")
+        }
+        else if (msg == "Delete OK!"){
+            Command : toastr["error"]("Delete OK!")
+        }
+        else if (msg == "Delete ERROR!"){
+            Command : toastr["error"]("Delete ERROR!")
+        }
+        toastr.options={
+            "positionClass": "toast-top-right",
+            "showDuration":"300",
+            "showMethod":"fadeIn",
+            "hideMethod":"fadeOut",
+        }
+    }
+</script>
 
 </body>
 </html>
