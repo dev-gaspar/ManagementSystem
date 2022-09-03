@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="853e8e45-8af8-4025-893d-caf44fc256d5" name="Changes" comment="Crud de empresas terminado, se creo editar y delete y sus templates">
+    <list default="true" id="853e8e45-8af8-4025-893d-caf44fc256d5" name="Changes" comment="Creacion de mensajes emergentes para rettro alimentacion al usuario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/controller/ControllerFull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/controller/ControllerFull.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/verEmpresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/verEmpresas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/service/EmpresaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/service/EmpresaService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
