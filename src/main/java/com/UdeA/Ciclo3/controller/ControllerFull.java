@@ -1,14 +1,20 @@
 package com.UdeA.Ciclo3.controller;
 
+import com.UdeA.Ciclo3.modelos.Empleado;
 import com.UdeA.Ciclo3.modelos.Empresa;
+import com.UdeA.Ciclo3.service.EmpleadoService;
 import com.UdeA.Ciclo3.service.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class ControllerFull {
+
+    //EMPRESAS
     @Autowired
     EmpresaService empresaService;
 
@@ -43,6 +49,30 @@ public class ControllerFull {
             return "Empresa eliminada correctamente";
         }
         return "Fallo al eliminar empresa";
+    }
+
+    //EMPLEADOS
+    @Autowired
+    EmpleadoService empleadoService;
+
+    @GetMapping("/empleados")
+    public List<Empleado> verEmpleados(){
+        return empleadoService.getAllEmpleados();
+    }
+
+    @PostMapping("/empleados")
+    public Optional<Empleado> guardarEmpleado(@RequestBody Empleado empleado){
+        return Optional.ofNullable(empleadoService.saveOrUpdateEmpleado(empleado));
+    }
+
+    @GetMapping("/empleados/{id}")
+    public Optional<Empleado> buscarEmpleado(@PathVariable("id") Integer id){
+        return empleadoService.getEmpleadoById(id);
+    }
+
+    @GetMapping("/enterprises/{id}/empleados")
+    public ArrayList<Empleado> EmpleadosPorEmpresa(@PathVariable("id") Integer id){
+        return empleadoService.getEmpleadoByEmpresa(id);
     }
 
 }
