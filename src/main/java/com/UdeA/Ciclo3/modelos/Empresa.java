@@ -1,5 +1,6 @@
 package com.UdeA.Ciclo3.modelos;
 
+import javax.persistence.Entity;
 import javax.persistence.*;
 
 @Entity
@@ -13,8 +14,7 @@ public class Empresa {
     private String telefono;
     private String NIT;
 
-    public Empresa() {
-    }
+    public Empresa() {    }
 
     public Empresa(String nombre, String direccion, String telefono, String NIT) {
         this.nombre = nombre;
@@ -23,20 +23,20 @@ public class Empresa {
         this.NIT = NIT;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDireccion() {
@@ -63,5 +63,3 @@ public class Empresa {
         this.NIT = NIT;
     }
 }
-
-

@@ -3,24 +3,27 @@ package com.UdeA.Ciclo3.modelos;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Movimientos")
+@Table(name = "Movimientos")
 public class MovimientoDinero {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private long monto;
     private String concepto;
+
     @ManyToOne
-    @JoinColumn(name = "empleado_id")
-    private Empleado usuario;
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
-    public MovimientoDinero() {
-    }
 
-    public MovimientoDinero(long monto, String concepto, Empleado empleado) {
+
+
+    public MovimientoDinero() {}
+
+    public MovimientoDinero(long monto, String concepto) {
         this.monto = monto;
         this.concepto = concepto;
-        this.usuario = empleado;
     }
 
     public int getId() {
@@ -47,11 +50,23 @@ public class MovimientoDinero {
         this.concepto = concepto;
     }
 
-    public Empleado getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Empleado empleado) {
-        this.usuario = empleado;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
+
+
+
+    public long monto() {
+        return 0;
+    }
+
+    public String usuario() {
+        return "Juan";
+    }
+
+
 }
