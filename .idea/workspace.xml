@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="853e8e45-8af8-4025-893d-caf44fc256d5" name="Changes" comment="Creacion de servicios de y repositorios de empleado">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/Ciclo3Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/Ciclo3Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/controller/ControllerFull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/controller/ControllerFull.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/Empleado.java" beforeDir="false" />
+    <list default="true" id="3772b14e-382c-41d4-91ae-6da866aeb624" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/repo/MovimientoDineroRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/repo/UsuarioRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/service/MovimientoDineroService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/service/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/Empresa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/MovimientoDinero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/MovimientoDinero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/repo/EmpleadoRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/repo/EmpresaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/repo/EmpresaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/service/EmpleadoService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/service/EmpresaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/service/EmpresaService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,18 +50,22 @@
     </option>
   </component>
   <component name="ProjectId" id="2DuXRCkA1cA40KzbLM035FPG7XR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Ciclo3Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.UdeA.Ciclo3.Ciclo3Application" />
@@ -124,13 +128,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/dev-gaspar" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Template y servicios agregar empresa" />
     <MESSAGE value="Crud de empresas terminado, se creo editar y delete y sus templates" />
     <MESSAGE value="Contolador rest en nueva rama" />
