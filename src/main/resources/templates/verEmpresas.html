@@ -123,7 +123,7 @@ text-decoration-none;
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a th:href="@{/empleados}">
                     <i class="zmdi zmdi-accounts-alt"></i> Empleados
                 </a>
             </li>
@@ -157,6 +157,7 @@ text-decoration-none;
                     <th>Dirección</th>
                     <th>Telefono</th>
                     <th>NIT</th>
+                    <th>Empleados</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>
@@ -169,8 +170,9 @@ text-decoration-none;
                     <td th:text="${empresa.direccion}"></td>
                     <td th:text="${empresa.telefono}"></td>
                     <td th:text="${empresa.NIT}"></td>
-                    <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarEmpresa/{id}(id=${empresa.id})}">Editar</a></button></td>
-                    <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarEmpresa/{id}(id=${empresa.id})}">Eliminar</a></button></td>
+                    <td><button type="button" class="btn btn-info"><a th:href="@{/Empresa/{id}/Empleados (id=${empresa.id})}"><i class="zmdi zmdi-accounts-alt"></i></a></button></td>
+                    <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarEmpresa/{id}(id=${empresa.id})}"><i class="zmdi zmdi-edit"></i></a></button></td>
+                    <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarEmpresa/{id}(id=${empresa.id})}"><i class="zmdi zmdi-delete"></i></a></button></td>
                 </tr>
             </table>
 

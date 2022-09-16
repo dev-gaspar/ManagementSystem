@@ -4,9 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="853e8e45-8af8-4025-893d-caf44fc256d5" name="Changes" comment="Template y servicios agregar empresa">
+    <list default="true" id="87e225a7-2c6b-466f-b9b9-bf4d5a87bb06" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/repo/EmpleadoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/service/EmpleadoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/agregarEmpleado.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/editarEmpleado.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/verEmpleados.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/Ciclo3Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/Ciclo3Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/controller/ControllerFull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/controller/ControllerFull.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/Empresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/MovimientoDinero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/MovimientoDinero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/agregarEmpresa.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/agregarEmpresa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editarEmpresa.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editarEmpresa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/verEmpresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/verEmpresas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/UdeA/Ciclo3/controller/ControllerFull.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/UdeA/Ciclo3/controller/ControllerFull.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/UdeA/Ciclo3/modelos/Empleado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/UdeA/Ciclo3/modelos/Empleado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/UdeA/Ciclo3/modelos/Empresa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/UdeA/Ciclo3/modelos/Empresa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/UdeA/Ciclo3/modelos/MovimientoDinero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/UdeA/Ciclo3/modelos/MovimientoDinero.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/verEmpresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/verEmpresas.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +37,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -40,6 +62,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2DuXRCkA1cA40KzbLM035FPG7XR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,13 +74,39 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/joseg/IdeaProjects/Proyecto1/src/main/resources/templates&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\joseg\IdeaProjects\Proyecto1\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Ciclo3Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.UdeA.Ciclo3.Ciclo3Application" />
+      <module name="Ciclo3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.UdeA.Ciclo3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Ciclo3Application" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="853e8e45-8af8-4025-893d-caf44fc256d5" name="Changes" comment="" />
+      <changelist id="87e225a7-2c6b-466f-b9b9-bf4d5a87bb06" name="Changes" comment="" />
       <created>1661549938784</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
