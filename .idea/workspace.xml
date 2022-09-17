@@ -4,28 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87e225a7-2c6b-466f-b9b9-bf4d5a87bb06" name="Changes" comment="Full Stack Empleados">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/repo/MovimientosRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/service/MovimientosService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/agregarMovimiento.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/editarMovimiento.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/verMovimientos.html" afterDir="false" />
+    <list default="true" id="87e225a7-2c6b-466f-b9b9-bf4d5a87bb06" name="Changes" comment="Full Stack Movimientos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/controller/ControllerFull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/controller/ControllerFull.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/agregarEmpleado.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/agregarEmpleado.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/agregarEmpresa.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/agregarEmpresa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editarEmpleado.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editarEmpleado.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editarEmpresa.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editarEmpresa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/verEmpleados.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/verEmpleados.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/verEmpresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/verEmpresas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/UdeA/Ciclo3/Ciclo3Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/UdeA/Ciclo3/Ciclo3Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/UdeA/Ciclo3/controller/ControllerFull.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/UdeA/Ciclo3/controller/ControllerFull.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/agregarEmpresa.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/agregarEmpresa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/editarEmpresa.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/editarEmpresa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/MovimientoDinero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/modelos/MovimientoDinero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/agregarMovimiento.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/agregarMovimiento.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editarMovimiento.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editarMovimiento.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/verMovimientos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/verMovimientos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/verEmpresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/verEmpresas.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663297190743</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Full Stack Movimientos">
+      <created>1663454366234</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663454366234</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -147,6 +139,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Template y servicios agregar empresa" />
     <MESSAGE value="Full Stack Empleados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Full Stack Empleados" />
+    <MESSAGE value="Full Stack Movimientos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full Stack Movimientos" />
   </component>
 </project>
