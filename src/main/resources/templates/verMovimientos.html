@@ -2,7 +2,7 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Theme Made By www.w3schools.com -->
-    <title>System - Empleados</title>
+    <title>System - Movimientos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -147,39 +147,42 @@ text-decoration-none;
 
 
         <div class="container">
-            <h1>Empleados</h1>
+            <h1>Movimientos</h1>
 
             <!--Dibujamos la tabla-->
             <table class="table table-bordered">
                 <tr>
                     <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Empresa</th>
-                    <th>Rol</th>
-                    <th>Mov</th>
+                    <th>Monto</th>
+                    <th>Concepto</th>
+                    <th>Responsable</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>
 
                 <!--Llenamos la tabla dibujada-->
-                <!--En nuestro controller, creamos en viewEmpleado un modelo con un atributo llamado emplelist donde esta guardada la lista de todas los empleados-->
-                <tr th:each="empleado : ${emplelist}">
-                    <td th:text="${empleado.id}"></td>
-                    <td th:text="${empleado.nombre}"></td>
-                    <td th:text="${empleado.correo}"></td>
-                    <td th:text="${empleado.empresa.nombre}"></td>
-                    <td th:if="${empleado.rol=='1'}">Admin</td>
-                    <td th:if="${empleado.rol=='2'}">Oper</td>
+                <!--En nuestro controller, creamos en viewMovimeintos un modelo con un atributo llamado movlist donde esta guardada la lista de todas los movimientos-->
+                <tr th:each="movimiento : ${movlist}">
+                    <td th:text="${movimiento.id}"></td>
+                    <td th:text="${movimiento.monto}"></td>
+                    <td th:if="${movimiento.concepto=='1'}">Papeleria</td>
+                    <td th:if="${movimiento.concepto=='2'}">Servicios publicos</td>
+                    <td th:if="${movimiento.concepto=='3'}">Servicios privados</td>
+                    <td th:if="${movimiento.concepto=='4'}">Caja menor</td>
+                    <td th:if="${movimiento.concepto=='5'}">Operativos</td>
+                    <td th:if="${movimiento.concepto=='6'}">Tributario</td>
+                    <td th:if="${movimiento.concepto=='7'}">Mobiliario</td>
+                    <td th:if="${movimiento.concepto=='8'}">Maquinaria y equipo</td>
+                    <td th:if="${movimiento.concepto=='9'}">Nomina</td>
+                    <td th:text="${movimiento.usuario.nombre}"></td>
 
-                    <td><button type="button" class="btn btn-info"><a th:href="@{/Empleado/{id}/Movimientos(id=${empleado.id})}"><i class="zmdi zmdi-balance-wallet"></i></a></button></td>
-                    <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarEmpleado/{id}(id=${empleado.id})}"><i class="zmdi zmdi-edit"></i></a></button></td>
-                    <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarEmpleado/{id}(id=${empleado.id})}"><i class="zmdi zmdi-delete"></i></a></button></td>
+                    <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarMovimiento/{id}(id=${movimiento.id})}"><i class="zmdi zmdi-edit"></i></a></button></td>
+                    <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarMovimiento/{id}(id=${movimiento.id})}"><i class="zmdi zmdi-delete"></i></a></button></td>
                 </tr>
             </table>
 
 
-            <button type="button" class="btn btn-info"><a th:href="@{/agregarEmpleado}">Nuevo</a></button>
+            <button type="button" class="btn btn-info"><a th:href="@{/agregarMovimiento}">Nuevo</a></button>
 
 
         </div>

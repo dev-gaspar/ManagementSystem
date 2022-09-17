@@ -2,8 +2,10 @@ package com.UdeA.Ciclo3.controller;
 
 import com.UdeA.Ciclo3.modelos.Empleado;
 import com.UdeA.Ciclo3.modelos.Empresa;
+import com.UdeA.Ciclo3.modelos.MovimientoDinero;
 import com.UdeA.Ciclo3.service.EmpleadoService;
 import com.UdeA.Ciclo3.service.EmpresaService;
+import com.UdeA.Ciclo3.service.MovimientosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -152,5 +154,87 @@ public class ControllerFull {
         model.addAttribute("mensaje", mensaje);
         return "verEmpleados"; //Llamamos al HTML
     }
+
+    //MOVIMIENTOS
+    @Autowired
+    MovimientosService movimientosService;
+    @GetMapping ({"/movimientos","/lista-movimientos"})
+    public String viewMovimientos(Model model, @ModelAttribute("mensaje") String mensaje){
+        List<MovimientoDinero> listaMovimientos=movimientosService.getAllMovimientos();
+        model.addAttribute("movlist",listaMovimientos);
+        model.addAttribute("mensaje", mensaje);
+        return "verMovimientos"; //Llamamos al HTML
+    }
+
+    @GetMapping({"/agregarMovimiento","/agregar-movimiento"})
+    public String agregarMovimiento(Model model , @ModelAttribute("mensaje") String mensaje){
+        MovimientoDinero movimiento = new MovimientoDinero();
+        model.addAttribute("movimiento",movimiento);
+        model.addAttribute("mensaje", mensaje);
+
+        List<Empleado> listaEmpleados =empleadoService.getAllEmpleado();
+        model.addAttribute("emplelist", listaEmpleados);
+
+        return "agregarMovimiento";
+    }
+
+    @PostMapping("/GuardarMovimiento")
+    public String guardarMovimiento(MovimientoDinero movimiento, RedirectAttributes redirectAttributes){
+        if (movimientosService.saveOrUpdateMovimiento(movimiento) == true){
+            redirectAttributes.addFlashAttribute("mensaje", "Save OK!");
+            return "redirect:/movimientos";
+        }
+        redirectAttributes.addFlashAttribute("mensaje", "Save ERROR!");
+        return "redirect:/agregar-movimiento";
+    }
+
+    @GetMapping("/EditarMovimiento/{id}")
+    public String editarMovimiento(Model model, @PathVariable Integer id, @ModelAttribute("mensaje") String mensaje){
+        MovimientoDinero movimiento = movimientosService.getMovimientoById(id);
+        model.addAttribute("movimiento", movimiento);
+        model.addAttribute("mensaje", mensaje);
+
+        List<Empleado> listaEmpleados =empleadoService.getAllEmpleado();
+        model.addAttribute("emplelist", listaEmpleados);
+
+        return "editarMovimiento";
+    }
+
+    @PostMapping("/ActualizarMovimiento")
+    public String actualizarMovimiento(MovimientoDinero movimiento, RedirectAttributes redirectAttributes){
+        if (movimientosService.saveOrUpdateMovimiento(movimiento) == true){
+            redirectAttributes.addFlashAttribute("mensaje", "Update OK!");
+            return "redirect:/movimientos";
+        }
+        redirectAttributes.addFlashAttribute("mensaje", "Update ERROR!");
+        return "redirect:/EditarMovimiento";
+    }
+
+    @GetMapping("/EliminarMovimiento/{id}")
+    public String eliminarMovimiento(@PathVariable Integer id, RedirectAttributes redirectAttributes){
+        if (movimientosService.deleteById(id)){
+            redirectAttributes.addFlashAttribute("mensaje", "Delete OK!");
+            return "redirect:/movimientos";
+        }
+        redirectAttributes.addFlashAttribute("mensaje", "Delete ERROR!");
+        return "redirect:/movimientos ";
+    }
+
+    @GetMapping ("/Empleado/{id}/Movimientos")
+    public String viewMovimeintosPorEmpleado(Model model,@PathVariable Integer id ,@ModelAttribute("mensaje") String mensaje){
+        List<MovimientoDinero> listaMovimientos=movimientosService.obtenerPorUsuario(id);
+        model.addAttribute("movlist",listaMovimientos);
+        model.addAttribute("mensaje", mensaje);
+        return "verMovimientos";
+    }
+
+    @GetMapping ("/Empresa/{id}/Movimientos")
+    public String viewMovimeintosPorEmpresa(Model model,@PathVariable Integer id ,@ModelAttribute("mensaje") String mensaje){
+        List<MovimientoDinero> listaMovimientos=movimientosService.obtenerPorEmpresa(id);
+        model.addAttribute("movlist",listaMovimientos);
+        model.addAttribute("mensaje", mensaje);
+        return "verMovimientos";
+    }
+
 
 }

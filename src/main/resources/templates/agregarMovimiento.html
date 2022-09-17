@@ -2,7 +2,7 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>System - Agregar Empleado</title>
+  <title>System - Agregar Movimiento</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
 
@@ -137,58 +137,56 @@ body {
 
     <div class="container">
 
-      <h1>Nuevo Empleado</h1>
+      <h1>Nuevo Movimiento</h1>
       <br>
-      <form th:action="@{/GuardarEmpleado}" th:object="${empleado}" method="post">
-        <!--Campo para nombre-->
+      <form th:action="@{/GuardarMovimiento}" th:object="${movimiento}" method="post">
+        <!--Campo para monto-->
         <div class="row">
           <div class="form-group col-md-12">
-            <label class="col-md-3" for="nombre">Nombre del Empleado:</label>
+            <label class="col-md-3" for="monto">Monto del Movimiento:</label>
             <div class="col-md-6">
-              <input type="text" th:field="*{nombre}" class="form-control" id="nombre" required="required">
+              <input type="number" th:field="*{monto}" class="form-control" id="monto" required="required">
             </div>
           </div>
         </div>
 
-        <!--Campo para correo-->
+        <!--Campo para concepto-->
         <div class="row">
           <div class="form-group col-md-12">
-            <label class="col-md-3" for="correo">Correo del Empleado:</label>
+            <label class="col-md-3" for="concepto">Concepto del Movimiento:</label>
             <div class="col-md-6">
-              <input type="email" th:field="*{correo}" class="form-control" id="correo" required="required">
-            </div>
-          </div>
-        </div>
-
-        <!--Campo para empresa-->
-        <div class="row">
-          <div class="form-group col-md-12">
-            <label class="col-md-3" for="empresa">Empresa a la que pertenece el empleado:</label>
-            <div class="col-md-6">
-              <select th:field="*{empresa}" class="form-control" id="empresa" required="required">
-                <option th:each="empresa : ${emprelist}" th:text="${empresa.nombre}" th:value="${empresa.id}"></option>
+              <select th:field="*{concepto}" class="form-control" id="concepto" required="required">
+                <option th:value=1>Papeleria</option>
+                <option th:value=2>Servicios publicos</option>
+                <option th:value=3>Servicios privados</option>
+                <option th:value=4>Caja menor</option>
+                <option th:value=5>Operativos</option>
+                <option th:value=6>Tributario</option>
+                <option th:value=7>Mobiliario</option>
+                <option th:value=8>Maquinaria y equipo</option>
+                <option th:value=9>Nomina</option>
               </select>
             </div>
           </div>
         </div>
 
-        <!--Campo para Rol-->
+        <!--Campo para usuario-->
         <div class="row">
           <div class="form-group col-md-12">
-            <label class="col-md-3" for="rol">Rol del empleado:</label>
+            <label class="col-md-3" for="usuario">Usuario responsable del Movimiento:</label>
             <div class="col-md-6">
-              <select th:field="*{rol}" class="form-control" id="rol" required="required">
-                <option th:value=1>Administrativo</option>
-                <option th:value=2>Operativo</option>
+              <select th:field="*{usuario}" class="form-control" id="usuario" required="required">
+                <option th:each="usuario : ${emplelist}" th:text="${usuario.nombre}" th:value="${usuario.id}"></option>
               </select>
             </div>
           </div>
         </div>
+
 
         <!--Boton para enviar todo y ejecutar accion -->
         <div class="row">
           <div class="col-md-2">
-            <button class="btn btn-success">Crear Empleado</button>
+            <button class="btn btn-success">Crear Movimiento</button>
           </div>
         </div>
 

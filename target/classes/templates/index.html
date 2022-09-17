@@ -104,7 +104,7 @@ body {
         </a>
       </li>
       <li>
-        <a href="#">
+        <a th:href="@{/movimientos}">
           <i class="zmdi zmdi-balance-wallet"></i> Contabilidad
         </a>
       </li>
@@ -114,7 +114,7 @@ body {
         </a>
       </li>
       <li>
-        <a href="#">
+        <a th:href="@{/empleados}">
           <i class="zmdi zmdi-accounts-alt"></i> Empleados
         </a>
       </li>
@@ -144,7 +144,7 @@ body {
         <div class="col-sm-4 col-xs-12">
           <div class="panel panel-default text-center">
             <div class="panel">
-              <h1>Sistema de gestion de contabilidad</h1>
+              <h1><a th:href="@{/movimientos}" class="text-decoration-none">Sistema de gestion de contabilidad</a></h1>
             </div>
 
           </div>
@@ -152,7 +152,7 @@ body {
         <div class="col-sm-4 col-xs-12">
           <div class="panel panel-default text-center">
             <div class="panel">
-              <h1>Sistema de gestion de usuarios</h1>
+              <h1><a th:href="@{/empleados}" class="text-decoration-none">Sistema de gestion de usuarios</a></h1>
             </div>
           </div>
         </div>

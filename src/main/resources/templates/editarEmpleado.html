@@ -103,7 +103,7 @@ body {
         </a>
       </li>
       <li>
-        <a href="#">
+        <a th:href="@{/movimientos}">
           <i class="zmdi zmdi-balance-wallet"></i> Contabilidad
         </a>
       </li>
@@ -145,7 +145,7 @@ body {
 
         <div class="row">
           <div class="form-group col-md-12">
-            <label class="col-md-3" for="id">Id de la Empleado:</label>
+            <label class="col-md-3" for="id">Id del Empleado:</label>
             <div class="col-md-6">
               <input type="text" th:field="*{id}" class="form-control" id="id" required="required" readonly>
             </div>
