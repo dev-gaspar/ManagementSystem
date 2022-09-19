@@ -146,48 +146,71 @@ text-decoration-none;
 
 
 
-        <div class="container">
-            <h1>Movimientos</h1>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <div  class="col-md-11">
+                    <h1>Movimientos</h1>
 
-            <!--Dibujamos la tabla-->
-            <table class="table table-bordered">
-                <tr>
-                    <th>ID</th>
-                    <th>Monto</th>
-                    <th>Concepto</th>
-                    <th>Responsable</th>
-                    <th>Fecha</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
+                    <!--Dibujamos la tabla-->
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>ID</th>
+                            <th>Monto</th>
+                            <th>Concepto</th>
+                            <th>Responsable</th>
+                            <th>Fecha</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
 
-                <!--Llenamos la tabla dibujada-->
-                <!--En nuestro controller, creamos en viewMovimeintos un modelo con un atributo llamado movlist donde esta guardada la lista de todas los movimientos-->
-                <tr th:each="movimiento : ${movlist}">
-                    <td th:text="${movimiento.id}"></td>
-                    <td th:text="${#numbers.formatDecimal(movimiento.monto, 0, 'COMMA', 2, 'POINT')}"></td>
-                    <td th:if="${movimiento.concepto=='1'}">Papeleria</td>
-                    <td th:if="${movimiento.concepto=='2'}">Servicios publicos</td>
-                    <td th:if="${movimiento.concepto=='3'}">Servicios privados</td>
-                    <td th:if="${movimiento.concepto=='4'}">Caja menor</td>
-                    <td th:if="${movimiento.concepto=='5'}">Operativos</td>
-                    <td th:if="${movimiento.concepto=='6'}">Tributario</td>
-                    <td th:if="${movimiento.concepto=='7'}">Mobiliario</td>
-                    <td th:if="${movimiento.concepto=='8'}">Maquinaria y equipo</td>
-                    <td th:if="${movimiento.concepto=='9'}">Nomina</td>
-                    <td th:text="${movimiento.usuario.nombre}"></td>
+                        <!--Llenamos la tabla dibujada-->
+                        <!--En nuestro controller, creamos en viewMovimeintos un modelo con un atributo llamado movlist donde esta guardada la lista de todas los movimientos-->
+                        <tr th:each="movimiento : ${movlist}">
+                            <td th:text="${movimiento.id}"></td>
+                            <td th:text="${#numbers.formatDecimal(movimiento.monto, 0, 'COMMA', 2, 'POINT')}"></td>
+                            <td th:if="${movimiento.concepto=='1'}">Papeleria</td>
+                            <td th:if="${movimiento.concepto=='2'}">Servicios publicos</td>
+                            <td th:if="${movimiento.concepto=='3'}">Servicios privados</td>
+                            <td th:if="${movimiento.concepto=='4'}">Caja menor</td>
+                            <td th:if="${movimiento.concepto=='5'}">Operativos</td>
+                            <td th:if="${movimiento.concepto=='6'}">Tributario</td>
+                            <td th:if="${movimiento.concepto=='7'}">Mobiliario</td>
+                            <td th:if="${movimiento.concepto=='8'}">Maquinaria y equipo</td>
+                            <td th:if="${movimiento.concepto=='9'}">Nomina</td>
+                            <td th:text="${movimiento.usuario.nombre}"></td>
 
-                    <td th:text="${#dates.format(movimiento.fecha, 'dd/MM/yyyy')}"></td>
+                            <td th:text="${#dates.format(movimiento.fecha, 'dd/MM/yyyy')}"></td>
 
-                    <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarMovimiento/{id}(id=${movimiento.id})}"><i class="zmdi zmdi-edit"></i></a></button></td>
-                    <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarMovimiento/{id}(id=${movimiento.id})}"><i class="zmdi zmdi-delete"></i></a></button></td>
-                </tr>
-            </table>
+                            <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarMovimiento/{id}(id=${movimiento.id})}"><i class="zmdi zmdi-edit"></i></a></button></td>
+                            <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarMovimiento/{id}(id=${movimiento.id})}"><i class="zmdi zmdi-delete"></i></a></button></td>
+                        </tr>
+                    </table>
+
+                    <!-- CAMPO PARA AREA DE NAVEGACION -->
+
+                    <nav arial-label="Ejemplo navegacion">
+                        <ul class="pagination mt-4">
+                            <li th:each="pagina: ${paginas}" class="page-item">
+                                <a class="page-link" th:text=""></a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- CAMPO PARA VER LA SUMA DE LOS MOVIMIENTOS FILTRADOS -->
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-3" for="sumaMontos">Total movimientos:</label>
+                            <div class="col-md-9">
+                                <p th:text="${#numbers.formatDecimal(sumaMontos, 0, 'COMMA', 2, 'POINT')}" class="form-control" id="sumaMontos"></p>
+                            </div>
+                        </div>
+                    </div>
 
 
-            <button type="button" class="btn btn-info"><a th:href="@{/agregarMovimiento}">Nuevo</a></button>
+                    <button type="button" class="btn btn-info"><a th:href="@{/agregarMovimiento}">Nuevo</a></button>
 
-
+                    </div>
+                </div>
         </div>
     </div>
 </div>

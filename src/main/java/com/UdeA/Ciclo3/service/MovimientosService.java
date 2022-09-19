@@ -48,5 +48,17 @@ public class MovimientosService {
         return movimientoDineroRepository.findByEmpresa(id);
     }
 
+    //Metodo suma los montos
+    public long getSumaMontos(){
+        return movimientoDineroRepository.sumarMonto();
+    }
+
+    public long getSumaMontosByEmpleado(Integer id){
+        return movimientoDineroRepository.sumarMontoPorEmpleado(id);
+    }
+
+    public long getSumaMontosByEmpresa(Integer id){
+        return movimientoDineroRepository.sumarMontoPorEmpresa(id);
+    }
 
 }

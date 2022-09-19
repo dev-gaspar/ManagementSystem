@@ -3,10 +3,13 @@ package com.UdeA.Ciclo3.controller;
 import com.UdeA.Ciclo3.modelos.Empleado;
 import com.UdeA.Ciclo3.modelos.Empresa;
 import com.UdeA.Ciclo3.modelos.MovimientoDinero;
+import com.UdeA.Ciclo3.repo.MovimientosRepository;
 import com.UdeA.Ciclo3.service.EmpleadoService;
 import com.UdeA.Ciclo3.service.EmpresaService;
 import com.UdeA.Ciclo3.service.MovimientosService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -158,11 +161,26 @@ public class ControllerFull {
     //MOVIMIENTOS
     @Autowired
     MovimientosService movimientosService;
+    @Autowired
+    MovimientosRepository movimientosRepository;
     @GetMapping ({"/movimientos","/lista-movimientos"})
-    public String viewMovimientos(Model model, @ModelAttribute("mensaje") String mensaje){
-        List<MovimientoDinero> listaMovimientos=movimientosService.getAllMovimientos();
-        model.addAttribute("movlist",listaMovimientos);
+    public String viewMovimientos(@RequestParam(value = "pagina", required = false, defaultValue = "0") int NumeroPagina,
+                                  @RequestParam(value = "medida", required = false, defaultValue = "5") int medida,
+                                  Model model, @ModelAttribute("mensaje") String mensaje){
+
+        //List<MovimientoDinero> listaMovimientos=movimientosService.getAllMovimientos();
+        Page<MovimientoDinero> paginasMovimientos = movimientosRepository.findAll(PageRequest.of(NumeroPagina, medida));
+
+        long sumaMontos = movimientosService.getSumaMontos();
+
+        //model.addAttribute("movlist",listaMovimientos);
+        model.addAttribute("movlist", paginasMovimientos.getContent());
+        model.addAttribute("paginas", new int[paginasMovimientos.getTotalPages()]);
+        model.addAttribute("paginaActual", NumeroPagina);
+
+        model.addAttribute("sumaMontos", sumaMontos);
         model.addAttribute("mensaje", mensaje);
+
         return "verMovimientos"; //Llamamos al HTML
     }
 
@@ -223,7 +241,10 @@ public class ControllerFull {
     @GetMapping ("/Empleado/{id}/Movimientos")
     public String viewMovimeintosPorEmpleado(Model model,@PathVariable Integer id ,@ModelAttribute("mensaje") String mensaje){
         List<MovimientoDinero> listaMovimientos=movimientosService.obtenerPorUsuario(id);
+        long sumaMontos = movimientosService.getSumaMontosByEmpleado(id);
+
         model.addAttribute("movlist",listaMovimientos);
+        model.addAttribute("sumaMontos", sumaMontos);
         model.addAttribute("mensaje", mensaje);
         return "verMovimientos";
     }
@@ -231,7 +252,10 @@ public class ControllerFull {
     @GetMapping ("/Empresa/{id}/Movimientos")
     public String viewMovimeintosPorEmpresa(Model model,@PathVariable Integer id ,@ModelAttribute("mensaje") String mensaje){
         List<MovimientoDinero> listaMovimientos=movimientosService.obtenerPorEmpresa(id);
+        long sumaMontos = movimientosService.getSumaMontosByEmpresa(id);
+
         model.addAttribute("movlist",listaMovimientos);
+        model.addAttribute("sumaMontos", sumaMontos);
         model.addAttribute("mensaje", mensaje);
         return "verMovimientos";
     }
