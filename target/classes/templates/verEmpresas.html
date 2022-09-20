@@ -146,42 +146,46 @@ text-decoration-none;
 
 
 
-        <div class="container">
-            <h1>Empresas</h1>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <div  class="col-md-11">
+                    <h1>Empresas</h1>
 
-            <!--Dibujamos la tabla-->
-            <table class="table table-bordered">
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Dirección</th>
-                    <th>Telefono</th>
-                    <th>NIT</th>
-                    <th>Empleados</th>
-                    <th>Mov</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
+                    <!--Dibujamos la tabla-->
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Dirección</th>
+                            <th>Telefono</th>
+                            <th>NIT</th>
+                            <th>Empleados</th>
+                            <th>Mov</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
 
-                <!--Llenamos la tabla dibujada-->
-                <!--En nuestro controller, creamos en viewEmpresa un modelo con un atributo llamado emplist donde esta guardada la lista de todas las empresas-->
-                <tr th:each="empresa : ${emplist}">
-                    <td th:text="${empresa.id}"></td>
-                    <td th:text="${empresa.nombre}"></td>
-                    <td th:text="${empresa.direccion}"></td>
-                    <td th:text="${empresa.telefono}"></td>
-                    <td th:text="${empresa.NIT}"></td>
-                    <td><button type="button" class="btn btn-info"><a th:href="@{/Empresa/{id}/Empleados (id=${empresa.id})}"><i class="zmdi zmdi-accounts-alt"></i></a></button></td>
-                    <td><button type="button" class="btn btn-info"><a th:href="@{/Empresa/{id}/Movimientos(id=${empresa.id})}"><i class="zmdi zmdi-balance-wallet"></i></a></button></td>
-                    <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarEmpresa/{id}(id=${empresa.id})}"><i class="zmdi zmdi-edit"></i></a></button></td>
-                    <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarEmpresa/{id}(id=${empresa.id})}"><i class="zmdi zmdi-delete"></i></a></button></td>
-                </tr>
-            </table>
-
-
-            <button type="button" class="btn btn-info"><a th:href="@{/agregarEmpresa}">Nueva</a></button>
+                        <!--Llenamos la tabla dibujada-->
+                        <!--En nuestro controller, creamos en viewEmpresa un modelo con un atributo llamado emplist donde esta guardada la lista de todas las empresas-->
+                        <tr th:each="empresa : ${emplist}">
+                            <td th:text="${empresa.id}"></td>
+                            <td th:text="${empresa.nombre}"></td>
+                            <td th:text="${empresa.direccion}"></td>
+                            <td th:text="${empresa.telefono}"></td>
+                            <td th:text="${empresa.NIT}"></td>
+                            <td><button type="button" class="btn btn-info"><a th:href="@{/Empresa/{id}/Empleados (id=${empresa.id})}"><i class="zmdi zmdi-accounts-alt"></i></a></button></td>
+                            <td><button type="button" class="btn btn-info"><a th:href="@{/Empresa/{id}/Movimientos(id=${empresa.id})}"><i class="zmdi zmdi-balance-wallet"></i></a></button></td>
+                            <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarEmpresa/{id}(id=${empresa.id})}"><i class="zmdi zmdi-edit"></i></a></button></td>
+                            <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarEmpresa/{id}(id=${empresa.id})}"><i class="zmdi zmdi-delete"></i></a></button></td>
+                        </tr>
+                    </table>
 
 
+                    <button type="button" class="btn btn-info"><a th:href="@{/agregarEmpresa}">Nueva</a></button>
+
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

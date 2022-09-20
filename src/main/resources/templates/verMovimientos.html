@@ -186,15 +186,16 @@ text-decoration-none;
                         </tr>
                     </table>
 
-                    <!-- CAMPO PARA AREA DE NAVEGACION -->
+                    <!-- CAMPO PARA AREA DE NAVEGACION-->
 
                     <nav arial-label="Ejemplo navegacion">
                         <ul class="pagination mt-4">
-                            <li th:each="pagina: ${paginas}" class="page-item">
-                                <a class="page-link" th:text=""></a>
+                            <li th:class="${paginaActual==estado.index} ? 'active' : '' " th:each="pagina, estado: ${paginas}" class="page-item">
+                                <a  th:href ="@{/movimientos/(pagina=${estado.index})}" class="page-link" th:text="${estado.index}+1"></a>
                             </li>
                         </ul>
                     </nav>
+
 
                     <!-- CAMPO PARA VER LA SUMA DE LOS MOVIMIENTOS FILTRADOS -->
                     <div class="row">
