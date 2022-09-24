@@ -15,14 +15,20 @@ public class Empleado {
     private Empresa empresa;
     private String rol;
 
+    private String contraseña;
+
+    private boolean estado;
+
     public Empleado() {
     }
 
-    public Empleado(String nombre, String correo, Empresa empresa, String rol) {
+    public Empleado(String nombre, String correo, Empresa empresa, String rol, String contraseña, boolean estado) {
         this.nombre = nombre;
         this.correo = correo;
         this.empresa = empresa;
         this.rol = rol;
+        this.contraseña = contraseña;
+        this.estado = estado;
     }
 
     public int getId() {
@@ -65,4 +71,19 @@ public class Empleado {
         this.empresa = empresa;
     }
 
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
 }

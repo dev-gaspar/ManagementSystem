@@ -136,7 +136,7 @@ text-decoration-none;
             <div class="container-fluid">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#"><i class="zmdi zmdi-account-circle"></i>
+                        <a th:href="@{/logout}"><i class="zmdi zmdi-sign-in"></i>
                         </a>
                     </li>
                     <li><a href="#">Test User</a></li>
@@ -159,6 +159,7 @@ text-decoration-none;
                             <th>Correo</th>
                             <th>Empresa</th>
                             <th>Rol</th>
+                            <th>Estado</th>
                             <th>Mov</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
@@ -171,8 +172,11 @@ text-decoration-none;
                             <td th:text="${empleado.nombre}"></td>
                             <td th:text="${empleado.correo}"></td>
                             <td th:text="${empleado.empresa.nombre}"></td>
-                            <td th:if="${empleado.rol=='1'}">Admin</td>
-                            <td th:if="${empleado.rol=='2'}">Oper</td>
+                            <td th:if="${empleado.rol=='ROLE_ADMIN'}">Admin</td>
+                            <td th:if="${empleado.rol=='ROLE_USER'}">Oper</td>
+
+                            <td th:if="${empleado.estado==true}">Activo</td>
+                            <td th:if="${empleado.estado==false}">Inactivo</td>
 
                             <td><button type="button" class="btn btn-info"><a th:href="@{/Empleado/{id}/Movimientos(id=${empleado.id})}"><i class="zmdi zmdi-balance-wallet"></i></a></button></td>
                             <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarEmpleado/{id}(id=${empleado.id})}"><i class="zmdi zmdi-edit"></i></a></button></td>

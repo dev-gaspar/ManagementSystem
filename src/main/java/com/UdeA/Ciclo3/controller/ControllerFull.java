@@ -8,8 +8,11 @@ import com.UdeA.Ciclo3.service.EmpleadoService;
 import com.UdeA.Ciclo3.service.EmpresaService;
 import com.UdeA.Ciclo3.service.MovimientosService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -110,6 +113,10 @@ public class ControllerFull {
 
     @PostMapping("/GuardarEmpleado")
     public String guardarEmpleado(Empleado empleado, RedirectAttributes redirectAttributes){
+
+        String passEncriptada = passwordEncoder().encode(empleado.getContraseña());
+        empleado.setContraseña(passEncriptada);
+
         if (empleadoService.saveOrUpdateEmpleado(empleado) == true){
             redirectAttributes.addFlashAttribute("mensaje", "Save OK!");
             return "redirect:/empleados";
@@ -132,6 +139,10 @@ public class ControllerFull {
 
     @PostMapping("/ActualizarEmpleado")
     public String actualizarEmpleado(Empleado empleado, RedirectAttributes redirectAttributes){
+
+        String passEncriptada = passwordEncoder().encode(empleado.getContraseña());
+        empleado.setContraseña(passEncriptada);
+
         if (empleadoService.saveOrUpdateEmpleado(empleado) == true){
             redirectAttributes.addFlashAttribute("mensaje", "Update OK!");
             return "redirect:/empleados";
@@ -258,6 +269,12 @@ public class ControllerFull {
         model.addAttribute("sumaMontos", sumaMontos);
         model.addAttribute("mensaje", mensaje);
         return "verMovimientos";
+    }
+
+    //Método para encriptar contraseña
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
     }
 
 
