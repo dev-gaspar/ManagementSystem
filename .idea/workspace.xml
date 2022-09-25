@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87e225a7-2c6b-466f-b9b9-bf4d5a87bb06" name="Changes" comment="Autenticacion y control de acceso easy">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/controller/ControllerFull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/controller/ControllerFull.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/service/MovimientosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/UdeA/Ciclo3/service/MovimientosService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/agregarMovimiento.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/agregarMovimiento.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/denegado.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/denegado.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editarMovimiento.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editarMovimiento.html" afterDir="false" />
-    </list>
+    <list default="true" id="87e225a7-2c6b-466f-b9b9-bf4d5a87bb06" name="Changes" comment="arreglo de bugs en movimientos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664113492082</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="arreglo de bugs en movimientos">
+      <created>1664124603673</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1664124603673</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -190,6 +190,7 @@
     <MESSAGE value="Autenticacion basica con JDBC" />
     <MESSAGE value="Autenticacion y control de acceco easy" />
     <MESSAGE value="Autenticacion y control de acceso easy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Autenticacion y control de acceso easy" />
+    <MESSAGE value="arreglo de bugs en movimientos" />
+    <option name="LAST_COMMIT_MESSAGE" value="arreglo de bugs en movimientos" />
   </component>
 </project>

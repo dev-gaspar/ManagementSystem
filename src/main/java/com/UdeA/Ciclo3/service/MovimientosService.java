@@ -53,17 +53,27 @@ public class MovimientosService {
         try {
             return movimientoDineroRepository.sumarMonto();
         } catch (Exception e){
-            System.out.println("Error: " + e);
+            System.out.println("Error no hay movimientos que sumar: " + e);
             return 0;
         }
     }
 
     public long getSumaMontosByEmpleado(Integer id){
-        return movimientoDineroRepository.sumarMontoPorEmpleado(id);
+        try {
+            return movimientoDineroRepository.sumarMontoPorEmpleado(id);
+        } catch (Exception e){
+            System.out.println("Error no hay movimientos que sumar: " + e);
+            return 0;
+        }
     }
 
     public long getSumaMontosByEmpresa(Integer id){
-        return movimientoDineroRepository.sumarMontoPorEmpresa(id);
+        try {
+            return movimientoDineroRepository.sumarMontoPorEmpresa(id);
+        } catch (Exception e){
+            System.out.println("Error no hay movimientos que sumar: " + e);
+            return 0;
+        }
     }
 
     //Servicio que nos deja buscar por correo
