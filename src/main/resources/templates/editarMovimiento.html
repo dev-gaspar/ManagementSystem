@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>System - Editar Movimiento</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+/* Toggle Styles */
+
+#viewport {
+  padding-left: 250px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#content {
+  width: 100%;
+  position: relative;
+  margin-right: 0;
+}
+
+/* Sidebar Styles */
+
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 250px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #37474F;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar header {
+  background-color: #263238;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
+}
+
+#sidebar header a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+#sidebar header a:hover {
+  color: #fff;
+}
+
+#sidebar .nav{
+
+}
+
+#sidebar .nav a{
+  background: none;
+  border-bottom: 1px solid #455A64;
+  color: #CFD8DC;
+  font-size: 14px;
+  padding: 16px 24px;
+}
+
+#sidebar .nav a:hover{
+  background: none;
+  color: #ECEFF1;
+}
+
+#sidebar .nav a i{
+  margin-right: 16px;
+}
+
+  </style>
+
+</head>
+<body>
+<div id="viewport">
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <header>
+      <a th:href="@{/}">System</a>
+    </header>
+    <ul class="nav">
+      <li>
+        <a th:href="@{/}">
+          <i class="zmdi zmdi-view-dashboard"></i> Home
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/movimientos}">
+          <i class="zmdi zmdi-balance-wallet"></i> Contabilidad
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/empresas}">
+          <i class="zmdi zmdi-widgets"></i> Empresas
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/empleados}">
+          <i class="zmdi zmdi-accounts-alt"></i> Empleados
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Content -->
+  <div id="content">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a th:href="@{/logout}"><i class="zmdi zmdi-sign-in"></i>
+            </a>
+          </li>
+          <li><a href="#">[[${#httpServletRequest.remoteUser}]]</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="container">
+
+      <h1>Actualizar Movimiento</h1>
+      <br>
+      <form th:action="@{/ActualizarMovimiento}" th:object="${movimiento}" method="post">
+
+        <!--Campo para id-->
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="id">Id del movimiento:</label>
+            <div class="col-md-6">
+              <input type="text" th:field="*{id}" class="form-control" id="id" required="required" readonly>
+            </div>
+          </div>
+        </div>
+
+        <!--Campo para monto-->
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="monto">Monto del Movimiento:</label>
+            <div class="col-md-6">
+              <input type="number" th:field="*{monto}" class="form-control" id="monto" required="required">
+            </div>
+          </div>
+        </div>
+
+        <!--Campo para concepto-->
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="concepto">Concepto del Movimiento:</label>
+            <div class="col-md-6">
+              <select th:field="*{concepto}" class="form-control" id="concepto" required="required">
+                <option th:value=1>Papeleria</option>
+                <option th:value=2>Servicios publicos</option>
+                <option th:value=3>Servicios privados</option>
+                <option th:value=4>Caja menor</option>
+                <option th:value=5>Operativos</option>
+                <option th:value=6>Tributario</option>
+                <option th:value=7>Mobiliario</option>
+                <option th:value=8>Maquinaria y equipo</option>
+                <option th:value=9>Nomina</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!--Campo para usuario-->
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="usuario">Responsable del movimiento:</label>
+            <div class="col-md-6">
+              <select th:field="*{usuario}" class="form-control" id="usuario" required="required" readonly>
+                <option th:value=*{usuario.id} th:text=*{usuario.correo}></option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="fecha">Fecha del Movimiento:</label>
+            <div class="col-md-6">
+              <input type="date" th:field="*{fecha}" class="form-control" id="fecha" required="required" readonly>
+            </div>
+          </div>
+        </div>
+
+
+        <!--Boton para enviar todo y ejecutar accion -->
+        <div class="row">
+          <div class="col-md-2">
+            <button class="btn btn-success">Actualizar Movimiento</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+
+</body>
+</html>

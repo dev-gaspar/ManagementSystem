@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>System - Editar Empresa</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+/* Toggle Styles */
+
+#viewport {
+  padding-left: 250px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#content {
+  width: 100%;
+  position: relative;
+  margin-right: 0;
+}
+
+/* Sidebar Styles */
+
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 250px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #37474F;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar header {
+  background-color: #263238;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
+}
+
+#sidebar header a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+#sidebar header a:hover {
+  color: #fff;
+}
+
+#sidebar .nav{
+
+}
+
+#sidebar .nav a{
+  background: none;
+  border-bottom: 1px solid #455A64;
+  color: #CFD8DC;
+  font-size: 14px;
+  padding: 16px 24px;
+}
+
+#sidebar .nav a:hover{
+  background: none;
+  color: #ECEFF1;
+}
+
+#sidebar .nav a i{
+  margin-right: 16px;
+}
+
+  </style>
+
+</head>
+<body>
+<div id="viewport">
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <header>
+      <a th:href="@{/}">System</a>
+    </header>
+    <ul class="nav">
+      <li>
+        <a th:href="@{/}">
+          <i class="zmdi zmdi-view-dashboard"></i> Home
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/movimientos}">
+          <i class="zmdi zmdi-balance-wallet"></i> Contabilidad
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/empresas}">
+          <i class="zmdi zmdi-widgets"></i> Empresas
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/empleados}">
+          <i class="zmdi zmdi-accounts-alt"></i> Empleados
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Content -->
+  <div id="content">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a th:href="@{/logout}"><i class="zmdi zmdi-sign-in"></i>
+            </a>
+          </li>
+          <li><a href="#">[[${#httpServletRequest.remoteUser}]]</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="container">
+
+      <h1>Editar Empresa</h1>
+      <br>
+      <form th:action="@{/ActualizarEmpresa}" th:object="${empresa}" method="post">
+
+        <!--Campo para id-->
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="id">Id de la Empresa:</label>
+            <div class="col-md-6">
+              <input type="text" th:field="*{id}" class="form-control" id="id" required="required" readonly>
+            </div>
+          </div>
+        </div>
+
+        <!--Campo para nombre-->
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="nombre">Nombre de la Empresa:</label>
+            <div class="col-md-6">
+              <input type="text" th:field="*{nombre}" class="form-control" id="nombre" required="required">
+            </div>
+          </div>
+        </div>
+
+        <!--Campo para direccion-->
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="direccion">Direccion de la Empresa:</label>
+            <div class="col-md-6">
+              <input type="text" th:field="*{direccion}" class="form-control" id="direccion" required="required">
+            </div>
+          </div>
+        </div>
+
+        <!--Campo para telefono-->
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="telefono">Telefono de la Empresa:</label>
+            <div class="col-md-6">
+              <input type="text" th:field="*{telefono}" class="form-control" id="telefono" required="required">
+            </div>
+          </div>
+        </div>
+
+        <!--Campo para NIT-->
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-3" for="NIT">NIT de la Empresa:</label>
+            <div class="col-md-6">
+              <input type="text" th:field="*{NIT}" class="form-control" id="NIT" required="required">
+            </div>
+          </div>
+        </div>
+
+        <!--Boton para enviar todo y ejecutar accion -->
+        <div class="row">
+          <div class="col-md-2">
+            <button class="btn btn-success">Actualizar Empresa</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+
+</body>
+</html>

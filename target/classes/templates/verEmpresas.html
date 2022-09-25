@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Theme Made By www.w3schools.com -->
+    <title>System - Empresas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+/* Toggle Styles */
+
+#viewport {
+  padding-left: 250px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#content {
+  width: 100%;
+  position: relative;
+  margin-right: 0;
+}
+
+/* Sidebar Styles */
+
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 250px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #37474F;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar header {
+  background-color: #263238;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
+}
+
+#sidebar header a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+#sidebar header a:hover {
+  color: #fff;
+}
+
+#sidebar .nav{
+
+}
+
+#sidebar .nav a{
+  background: none;
+  border-bottom: 1px solid #455A64;
+  color: #CFD8DC;
+  font-size: 14px;
+  padding: 16px 24px;
+}
+
+#sidebar .nav a:hover{
+  background: none;
+  color: #ECEFF1;
+}
+
+#sidebar .nav a i{
+  margin-right: 16px;
+}
+
+a{
+color:white;
+text-decoration-none;
+}
+
+  </style>
+
+</head>
+<body>
+<div id="viewport">
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <header>
+            <a th:href="@{/}">System</a>
+        </header>
+        <ul class="nav">
+            <li>
+                <a th:href="@{/}">
+                    <i class="zmdi zmdi-view-dashboard"></i> Home
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/movimientos}">
+                    <i class="zmdi zmdi-balance-wallet"></i> Contabilidad
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/empresas}">
+                    <i class="zmdi zmdi-widgets"></i> Empresas
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/empleados}">
+                    <i class="zmdi zmdi-accounts-alt"></i> Empleados
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a th:href="@{/logout}"><i class="zmdi zmdi-sign-in"></i>
+                        </a>
+                    </li>
+                    <li><a href="#">[[${#httpServletRequest.remoteUser}]]</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+        <div class="row">
+            <div class="form-group col-md-12">
+                <div  class="col-md-11">
+                    <h1>Empresas</h1>
+
+                    <!--Dibujamos la tabla-->
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Dirección</th>
+                            <th>Telefono</th>
+                            <th>NIT</th>
+                            <th>Empleados</th>
+                            <th>Mov</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+
+                        <!--Llenamos la tabla dibujada-->
+                        <!--En nuestro controller, creamos en viewEmpresa un modelo con un atributo llamado emplist donde esta guardada la lista de todas las empresas-->
+                        <tr th:each="empresa : ${emplist}">
+                            <td th:text="${empresa.id}"></td>
+                            <td th:text="${empresa.nombre}"></td>
+                            <td th:text="${empresa.direccion}"></td>
+                            <td th:text="${empresa.telefono}"></td>
+                            <td th:text="${empresa.NIT}"></td>
+                            <td><button type="button" class="btn btn-info"><a th:href="@{/Empresa/{id}/Empleados (id=${empresa.id})}"><i class="zmdi zmdi-accounts-alt"></i></a></button></td>
+                            <td><button type="button" class="btn btn-info"><a th:href="@{/Empresa/{id}/Movimientos(id=${empresa.id})}"><i class="zmdi zmdi-balance-wallet"></i></a></button></td>
+                            <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarEmpresa/{id}(id=${empresa.id})}"><i class="zmdi zmdi-edit"></i></a></button></td>
+                            <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarEmpresa/{id}(id=${empresa.id})}"><i class="zmdi zmdi-delete"></i></a></button></td>
+                        </tr>
+                    </table>
+
+
+                    <button type="button" class="btn btn-info"><a th:href="@{/agregarEmpresa}">Nueva</a></button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- partial -->
+
+<script th:inline="javascript">
+    window.onload=function(){
+
+        var msg= [[${mensaje}]];
+        if (msg == "Save OK!"){
+            Command : toastr["success"]("Save OK!")
+            }
+        else if (msg == "Update OK!"){
+            Command : toastr["success"]("Update OK!")
+        }
+        else if (msg == "Delete OK!"){
+            Command : toastr["error"]("Delete OK!")
+        }
+        else if (msg == "Delete ERROR!"){
+            Command : toastr["error"]("Delete ERROR!")
+        }
+        toastr.options={
+            "positionClass": "toast-top-right",
+            "showDuration":"300",
+            "showMethod":"fadeIn",
+            "hideMethod":"fadeOut",
+        }
+    }
+</script>
+
+</body>
+</html>
