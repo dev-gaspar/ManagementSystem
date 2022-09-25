@@ -11,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.security.core.Authentication;
 
 import java.util.List;
 
@@ -140,8 +142,12 @@ public class ControllerFull {
     @PostMapping("/ActualizarEmpleado")
     public String actualizarEmpleado(Empleado empleado, RedirectAttributes redirectAttributes){
 
-        String passEncriptada = passwordEncoder().encode(empleado.getContraseña());
-        empleado.setContraseña(passEncriptada);
+        if (!empleado.getContraseña().trim().equals("")){
+            String passEncriptada = passwordEncoder().encode(empleado.getContraseña());
+            empleado.setContraseña(passEncriptada);
+        } else{
+            empleado.setContraseña(empleadoService.getEmpleadoById(empleado.getId()).getContraseña());
+        }
 
         if (empleadoService.saveOrUpdateEmpleado(empleado) == true){
             redirectAttributes.addFlashAttribute("mensaje", "Update OK!");
@@ -201,8 +207,10 @@ public class ControllerFull {
         model.addAttribute("movimiento",movimiento);
         model.addAttribute("mensaje", mensaje);
 
-        List<Empleado> listaEmpleados =empleadoService.getAllEmpleado();
-        model.addAttribute("emplelist", listaEmpleados);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String correo = auth.getName();
+        Integer idEmpleado = movimientosService.IdPorCorreo(correo);
+        model.addAttribute("idEmpleado", idEmpleado);
 
         return "agregarMovimiento";
     }
@@ -269,6 +277,12 @@ public class ControllerFull {
         model.addAttribute("sumaMontos", sumaMontos);
         model.addAttribute("mensaje", mensaje);
         return "verMovimientos";
+    }
+
+    //metodo redirecciona a pagina de no autorizado
+    @RequestMapping(value= "/denegado")
+    public String denegado(){
+        return "denegado";
     }
 
     //Método para encriptar contraseña

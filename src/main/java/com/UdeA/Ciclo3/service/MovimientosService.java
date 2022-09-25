@@ -61,4 +61,8 @@ public class MovimientosService {
         return movimientoDineroRepository.sumarMontoPorEmpresa(id);
     }
 
+    //Servicio que nos deja buscar por correo
+    public Integer IdPorCorreo(String correo){
+        return movimientoDineroRepository.idPorCorreo(correo);
+    }
 }

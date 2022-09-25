@@ -129,7 +129,7 @@ body {
             <a th:href="@{/logout}"><i class="zmdi zmdi-sign-in"></i>
             </a>
           </li>
-          <li><a href="#">Test User</a></li>
+          <li><a href="#">[[${#httpServletRequest.remoteUser}]]</a></li>
         </ul>
       </div>
     </nav>
@@ -175,8 +175,8 @@ body {
           <div class="form-group col-md-12">
             <label class="col-md-3" for="usuario">Usuario responsable del Movimiento:</label>
             <div class="col-md-6">
-              <select th:field="*{usuario}" class="form-control" id="usuario" required="required">
-                <option th:each="usuario : ${emplelist}" th:text="${usuario.nombre}" th:value="${usuario.id}"></option>
+              <select th:field="*{usuario}" class="form-control" id="usuario" required="required" readonly>
+                <option th:text="${#httpServletRequest.remoteUser}" th:value="${idEmpleado}"></option>
               </select>
             </div>
           </div>

@@ -129,7 +129,7 @@ body {
             <a th:href="@{/logout}"><i class="zmdi zmdi-sign-in"></i>
             </a>
           </li>
-          <li><a href="#">Test User</a></li>
+          <li><a href="#">[[${#httpServletRequest.remoteUser}]]</a></li>
         </ul>
       </div>
     </nav>
