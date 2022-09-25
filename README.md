@@ -16,6 +16,10 @@ supremamente delicadas, el sistema debería permitir llevar una trazabilidad
 de quién registró cada transacción, por lo cual el sistema debe contar con un
 sistema de autenticación.
 
+### Proyecto terminado:
+https://system-udea-ciclo3.herokuapp.com/
+
+
 ### Wireframes:
 https://www.figma.com/file/mO0VZHJSMrebmB6LTmxLdm/Untitled?node-id=0%3A1
 
