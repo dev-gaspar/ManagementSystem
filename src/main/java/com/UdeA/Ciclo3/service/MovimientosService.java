@@ -50,7 +50,12 @@ public class MovimientosService {
 
     //Metodo suma los montos
     public long getSumaMontos(){
-        return movimientoDineroRepository.sumarMonto();
+        try {
+            return movimientoDineroRepository.sumarMonto();
+        } catch (Exception e){
+            System.out.println("Error: " + e);
+            return 0;
+        }
     }
 
     public long getSumaMontosByEmpleado(Integer id){

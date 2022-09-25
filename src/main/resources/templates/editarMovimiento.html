@@ -182,12 +182,13 @@ body {
           </div>
         </div>
 
+        <!--Campo para usuario-->
         <div class="row">
           <div class="form-group col-md-12">
-            <label class="col-md-3" for="usuario">Usuario responsable del Movimiento:</label>
+            <label class="col-md-3" for="usuario">Responsable del movimiento:</label>
             <div class="col-md-6">
               <select th:field="*{usuario}" class="form-control" id="usuario" required="required" readonly>
-                <option th:text="${#httpServletRequest.remoteUser}" th:value="${idEmpleado}"></option>
+                <option th:value=*{usuario.id} th:text=*{usuario.correo}></option>
               </select>
             </div>
           </div>

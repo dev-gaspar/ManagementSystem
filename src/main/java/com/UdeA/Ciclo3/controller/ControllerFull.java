@@ -231,8 +231,10 @@ public class ControllerFull {
         model.addAttribute("movimiento", movimiento);
         model.addAttribute("mensaje", mensaje);
 
-        List<Empleado> listaEmpleados =empleadoService.getAllEmpleado();
-        model.addAttribute("emplelist", listaEmpleados);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String correo = auth.getName();
+        Integer idEmpleado = movimientosService.IdPorCorreo(correo);
+        model.addAttribute("idEmpleado", idEmpleado);
 
         return "editarMovimiento";
     }
