@@ -1,4 +1,4 @@
-# Proyecto1
+# ManagementSystem
 ## Descripción del proyecto
 Se requiere un aplicativo web para que un administrador pueda gestionar los
 ingresos y egresos de su empresa. El sistema debería permitir visualizar los
