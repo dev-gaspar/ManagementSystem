@@ -19,9 +19,9 @@ sistema de autenticación.
 ### Proyecto terminado:
 https://management-system-ciclo3.herokuapp.com/
 
-Credenciales de prueba: \n
-email: admin@gmail.com - pass: admin \n
-email: empleado@gmail.com - pass: empleado
+#### Credenciales de prueba: 
+- email: admin@gmail.com - pass: admin 
+- email: empleado@gmail.com - pass: empleado
 
 
 ### Wireframes:
