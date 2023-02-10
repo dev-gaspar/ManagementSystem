@@ -17,7 +17,7 @@ de quién registró cada transacción, por lo cual el sistema debe contar con un
 sistema de autenticación.
 
 ### Proyecto terminado:
-https://system-udea-ciclo3.herokuapp.com/
+https://management-system-ciclo3.herokuapp.com/ 
 
 
 ### Wireframes:
