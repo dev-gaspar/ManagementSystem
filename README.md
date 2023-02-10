@@ -17,7 +17,11 @@ de quién registró cada transacción, por lo cual el sistema debe contar con un
 sistema de autenticación.
 
 ### Proyecto terminado:
-https://management-system-ciclo3.herokuapp.com/ 
+https://management-system-ciclo3.herokuapp.com/
+
+Credenciales prueba:
+email: admin@gmail.com - pass: admin
+email: empleado@gmail.com - pass: empleado
 
 
 ### Wireframes:
